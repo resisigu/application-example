@@ -40,7 +40,7 @@
     "@emotion/react": "^11.11.0",
     "@emotion/styled": "^11.11.0",
     "@lidojs/core": "^0.0.3",
-    "@lidojs/editor": "^0.0.5",
+    "@lidojs/editor": "^0.0.6",
     "@lidojs/utils": "^0.0.1",
     "axios": "^1.4.0",
     "color": "^4.2.3",
