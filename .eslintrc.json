@@ -1,26 +1,50 @@
 {
-    "parser": "@typescript-eslint/parser",
-    "extends": ["plugin:react/recommended", "plugin:@typescript-eslint/recommended", "plugin:prettier/recommended"],
-    "parserOptions": {
-        "ecmaVersion": 2018,
-        "sourceType": "module",
-        "ecmaFeatures": {
-            "jsx": true
-        }
-    },
-    "rules": {
-        "prettier/prettier": [
-            "error",
-            {
-                "endOfLine": "auto"
-            }
+  "root": true,
+  "ignorePatterns": ["**/*"],
+  "plugins": ["import", "unused-imports"],
+  "overrides": [
+    {
+      "files": ["*.ts", "*.tsx", "*.js", "*.jsx"],
+      "rules": {
+        "import/extensions": "off",
+        "react/jsx-sort-props": [
+          "error",
+          {
+            "callbacksLast": true,
+            "shorthandFirst": true,
+            "reservedFirst": true
+          }
         ],
-        "react/prop-types": "off",
-        "react/no-unknown-property": ["error", { "ignore": ["css"] }]
+        "import/order": [
+          "error",
+          {
+            "alphabetize": {
+              "order": "asc",
+              "caseInsensitive": true
+            }
+          }
+        ],
+        "unused-imports/no-unused-imports": "error",
+        "no-case-declarations": "off",
+        "@nx/enforce-module-boundaries": [
+          "error",
+          {
+            "enforceBuildableLibDependency": true,
+            "allow": [],
+            "depConstraints": [
+              {
+                "sourceTag": "*",
+                "onlyDependOnLibsWithTags": ["*"]
+              }
+            ]
+          }
+        ]
+      }
     },
-    "settings": {
-        "react": {
-            "version": "detect"
-        }
+    {
+      "files": ["*.ts", "*.tsx"],
+      "extends": ["prettier"],
+      "rules": {}
     }
+  ]
 }

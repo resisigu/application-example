@@ -7,46 +7,37 @@ import React, { FC, FormEvent, useEffect, useRef, useState } from 'react';
 import { isMobile } from 'react-device-detect';
 import Masonry from 'react-responsive-masonry';
 import { useAsync } from 'react-use';
-import Photo from './Photo';
 
-const ImageContent: FC<{ onClose: () => void }> = ({ onClose }) => {
+const GraphicContent: FC<{ onClose: () => void }> = ({ onClose }) => {
   const qRef = useRef<HTMLInputElement>(null);
   const scrollRef = useRef<HTMLDivElement>(null);
   const dataRef = useRef(false);
   const [images, setImages] = useState<
     {
       id: string;
-      image: string;
       thumb: string;
-      width: number;
-      height: number;
-      username: string;
-      name: string;
+      downloadUrl: string;
     }[]
   >([]);
   const [isLoading, setIsLoading] = useState(true);
   const [keyword, setKeyword] = useState('');
   const { actions } = useEditor();
 
-  const loadImageList = useEventCallback(async (offset = 0) => {
+  const loadGraphicList = useEventCallback(async (offset: number) => {
     dataRef.current = true;
     setIsLoading(true);
     const params = {
-      limit: '40',
-      page: (images.length % 40) + 1 + '',
+      limit: '100',
+      offset: offset + '',
       q: keyword,
     };
     const response = await axios.get<
       {
         id: string;
-        image: string;
         thumb: string;
-        width: number;
-        height: number;
-        username: string;
-        name: string;
+        downloadUrl: string;
       }[]
-    >(`/images?${new URLSearchParams(params).toString()}`);
+    >(`/graphics?${new URLSearchParams(params).toString()}`);
     if (offset) {
       setImages((prevState) => {
         prevState.push(...response.data);
@@ -61,24 +52,25 @@ const ImageContent: FC<{ onClose: () => void }> = ({ onClose }) => {
     }
   });
   useAsync(async () => {
-    await loadImageList(0);
-  }, [loadImageList]);
+    await loadGraphicList(0);
+  }, [loadGraphicList]);
+
+  const handleLoadMore = useEventCallback(async (e: Event) => {
+    const node = e.target as HTMLDivElement;
+    if (
+      node.scrollHeight - node.scrollTop - 80 <= node.clientHeight &&
+      !dataRef.current
+    ) {
+      await loadGraphicList(images.length);
+    }
+  });
 
   useEffect(() => {
-    const handleLoadMore = async (e: Event) => {
-      const node = e.target as HTMLDivElement;
-      if (
-        node.scrollHeight - node.scrollTop - 80 <= node.clientHeight &&
-        !dataRef.current
-      ) {
-        await loadImageList(images.length);
-      }
-    };
     scrollRef.current?.addEventListener('scroll', handleLoadMore);
     return () => {
       scrollRef.current?.removeEventListener('scroll', handleLoadMore);
     };
-  }, [loadImageList, images]);
+  }, [handleLoadMore]);
   const handleSearch = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     if (scrollRef.current) {
@@ -86,23 +78,31 @@ const ImageContent: FC<{ onClose: () => void }> = ({ onClose }) => {
     }
     setKeyword(qRef.current?.value || '');
     setTimeout(async () => {
-      await loadImageList(0);
+      await loadGraphicList(0);
     });
   };
-  const addImage = async (item: {
+  const addGraphic = async (item: {
     id: string;
-    image: string;
     thumb: string;
-    width: number;
-    height: number;
-    username: string;
-    name: string;
+    downloadUrl: string;
   }) => {
-    actions.addImageLayer(
-      { thumb: item.thumb, url: item.image },
-      { width: item.width, height: item.height }
+    const res = await axios.get(
+      `/graphics/download?url=${window.encodeURIComponent(item.downloadUrl)}`
     );
-    axios.put(`/images?id=${item.id}`);
+    const file = res.data.file;
+    const parser = new DOMParser();
+    const ele = parser.parseFromString(file, 'text/xml').documentElement;
+    const viewBox = ele.getAttribute('viewBox')?.split(' ') || [];
+    const width =
+      viewBox.length === 4 ? +viewBox[2] : +(ele.getAttribute('width') || 100);
+    const height =
+      viewBox.length === 4 ? +viewBox[3] : +(ele.getAttribute('height') || 100);
+
+    const svgBlob = new Blob([ele.outerHTML], {
+      type: 'image/svg+xml;charset=utf-8',
+    });
+    const svgUrl = URL.createObjectURL(svgBlob);
+    actions.addSvgLayer(svgUrl, { width, height }, ele);
     if (isMobile) {
       onClose();
     }
@@ -137,7 +137,7 @@ const ImageContent: FC<{ onClose: () => void }> = ({ onClose }) => {
             flexGrow: 1,
           }}
         >
-          Images
+          Graphic
         </p>
         <div
           css={{
@@ -200,31 +200,18 @@ const ImageContent: FC<{ onClose: () => void }> = ({ onClose }) => {
             gridGap: 8,
           }}
         >
-          <Masonry columnsCount={2} gutter="8px">
+          <Masonry columnsCount={4} gutter="20px">
             {images.map((item, idx) => (
-              <Photo
-                key={idx}
-                image={item.thumb}
-                name={item.name}
-                username={item.username}
-                onClick={() => {
-                  addImage(item);
-                }}
-              />
+              <div css={{ cursor: 'pointer' }} onClick={() => addGraphic(item)}>
+                <img key={item.id} loading="lazy" src={item.thumb} />
+              </div>
             ))}
           </Masonry>
           {isLoading && <div>Loading...</div>}
         </div>
       </div>
-
-      <div css={{ flexShrink: 0, paddingLeft: 16, textAlign: 'center' }}>
-        Photos by{' '}
-        <a href="https://unsplash.com/" rel="noreferrer" target="_blank">
-          Unsplash
-        </a>
-      </div>
     </div>
   );
 };
 
-export default ImageContent;
+export default GraphicContent;

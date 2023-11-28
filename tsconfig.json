@@ -1,26 +1,22 @@
 {
-    "compilerOptions": {
-        "target": "es2017",
-        "lib": ["dom", "dom.iterable", "esnext"],
-        "composite": true,
-        "allowJs": true,
-        "importHelpers": true,
-        "useDefineForClassFields": true,
-        "skipLibCheck": true,
-        "esModuleInterop": true,
-        "allowSyntheticDefaultImports": true,
-        "strict": true,
-        "forceConsistentCasingInFileNames": true,
-        "noFallthroughCasesInSwitch": true,
-        "module": "esnext",
-        "declaration": false,
-        "moduleResolution": "node",
-        "resolveJsonModule": true,
-        "isolatedModules": true,
-        "noEmit": true,
-        "jsx": "react-jsx",
-        "jsxImportSource": "@emotion/react"
-    },
-    "include": ["**/*.d.ts", "**/*.ts", "**/*.tsx"],
-    "exclude": ["**/node_modules", "**/dist"]
+  "compileOnSave": false,
+  "compilerOptions": {
+    "rootDir": ".",
+    "sourceMap": true,
+    "declaration": false,
+    "moduleResolution": "node",
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "esModuleInterop": true,
+    "importHelpers": true,
+    "target": "es2015",
+    "module": "esnext",
+    "lib": ["dom", "dom.iterable", "esnext"],
+    "jsx": "react-jsx",
+    "jsxImportSource": "@emotion/react",
+    "skipLibCheck": true,
+    "skipDefaultLibCheck": true,
+    "baseUrl": "."
+  },
+  "exclude": ["node_modules", "tmp"]
 }

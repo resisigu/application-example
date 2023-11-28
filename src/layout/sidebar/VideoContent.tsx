@@ -1,33 +1,42 @@
 import XIcon from '@duyank/icons/regular/X';
 import { useEditor } from '@lidojs/design-editor';
-import axios from 'axios';
 import React, { FC, useState } from 'react';
 import { isMobile } from 'react-device-detect';
 import { useAsync } from 'react-use';
 
-interface Frame {
-  img: string;
-  clipPath: string;
-  width: number;
-  height: number;
-}
-
-const FrameContent: FC<{ onClose: () => void }> = ({ onClose }) => {
-  const [frames, setFrames] = useState<Frame[]>([]);
-  const [isLoading, setIsLoading] = useState(true);
+const VideoContent: FC<{ onClose: () => void }> = ({ onClose }) => {
+  const [videos, setVideos] = useState<
+    { img: string; url: string; width: number; height: number }[]
+  >([
+    {
+      img: 'https://template.canva.com/EAFaarkqz_0/2/0/400w-IVVQCZOr1K4.jpg',
+      url: 'https://template.canva.com/EAFaarkqz_0/2/0/400w-xadNArxL6gA.mp4',
+      width: 400,
+      height: 334,
+    },
+  ]);
+  const [isLoading, setIsLoading] = useState(false);
   const { actions } = useEditor();
   useAsync(async () => {
-    const response = await axios.get<Frame[]>('/frames');
-    setFrames(response.data);
-    setIsLoading(false);
+    //const response = await axios.get<{ img: string; url: string; width: number; height: number }[]>('/videos');
+    //setVideos(response.data);
+    //setIsLoading(false);
   }, []);
-  const addFrame = async (data: Frame) => {
-    actions.addFrameLayer(data, data.clipPath);
+
+  const addVideo = ({
+    url,
+    width,
+    height,
+  }: {
+    url: string;
+    width: number;
+    height: number;
+  }) => {
+    actions.addVideoLayer({ url }, { width, height });
     if (isMobile) {
       onClose();
     }
   };
-
   return (
     <div
       css={{
@@ -57,7 +66,7 @@ const FrameContent: FC<{ onClose: () => void }> = ({ onClose }) => {
             flexGrow: 1,
           }}
         >
-          Frames
+          Images
         </p>
         <div
           css={{
@@ -84,38 +93,34 @@ const FrameContent: FC<{ onClose: () => void }> = ({ onClose }) => {
             overflowY: 'auto',
             display: 'grid',
             gridTemplateColumns: 'repeat(3,minmax(0,1fr))',
-            gridGap: 8,
             padding: '16px',
+            gridGap: 8,
           }}
         >
           {isLoading && <div>Loading...</div>}
-          {frames.map((item, index) => (
+          {videos.map((item, idx) => (
             <div
-              key={index}
-              css={{ cursor: 'pointer', position: 'relative' }}
-              onClick={() => addFrame(item)}
+              key={idx}
+              css={{
+                cursor: 'pointer',
+                position: 'relative',
+                paddingBottom: '100%',
+                width: '100%',
+              }}
+              onClick={() => addVideo(item)}
             >
-              <div css={{ paddingBottom: '100%' }} />
-              <div
+              <img
                 css={{
                   position: 'absolute',
                   top: 0,
                   left: 0,
                   height: '100%',
                   width: '100%',
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'center',
+                  objectFit: 'cover',
                 }}
-              >
-                <img
-                  css={{
-                    maxHeight: '100%',
-                    maxWidth: '100%',
-                  }}
-                  src={item.img}
-                />
-              </div>
+                loading="lazy"
+                src={item.img}
+              />
             </div>
           ))}
         </div>
@@ -124,4 +129,4 @@ const FrameContent: FC<{ onClose: () => void }> = ({ onClose }) => {
   );
 };
 
-export default FrameContent;
+export default VideoContent;
