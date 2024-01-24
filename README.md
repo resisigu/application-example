@@ -14,8 +14,3 @@ https://lidojs.com
 # Community
 [https://discord.gg/mBj7fqKpEM](https://discord.gg/mBj7fqKpEM)
 
-# Send Message & Get Updates
-https://www.facebook.com/lidojs
-
-# Send Message & Get Updates
-https://www.facebook.com/lidojs
