@@ -1,7 +1,10 @@
 
 **LidoJS** is a design tool with UX same as Canva.
+
 Lidojs (Canva-clone) is a web-based graphic design tool. This project is developed with React JS and TypeScript from scratch.
+
 The tool is developed from scratch with ReactJS, so it's easy to upgrade by yourself.
+
 This code will show you how to integrate LidoJS into an application to make it works like Canva application.
 
 # Community
