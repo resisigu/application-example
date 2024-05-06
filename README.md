@@ -1,4 +1,4 @@
-![image](https://github.com/lidojs/canva-clone/assets/19285404/06249d78-3e6c-45a0-b14a-bd73c186fd84)
+<img width="960" alt="Screenshot 2023-04-22 101234" src="https://github.com/lidojs/canva-clone/assets/19285404/06249d78-3e6c-45a0-b14a-bd73c186fd84" />
 
 **LidoJS** is a design tool with UX same as Canva.
 
