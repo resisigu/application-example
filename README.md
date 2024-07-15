@@ -22,7 +22,7 @@ Built with ReactJS, our tool offers a seamless experience and allows for easy up
 [https://discord.gg/mBj7fqKpEM](https://discord.gg/mBj7fqKpEM)
 
 # Pricing
-Our website: [[https://lidojs.com](https://lidojs.com/pricing)](https://lidojs.com/pricing)
+Our website: [https://lidojs.com/pricing](https://lidojs.com/pricing)
 
 ## Features
 
