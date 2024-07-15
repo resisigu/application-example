@@ -8,8 +8,7 @@ The tool is developed from scratch with ReactJS, so it's easy to upgrade by your
 
 This code will show you how to integrate LidoJS into an application to make it works like Canva application.
 
-# Community
-[https://discord.gg/mBj7fqKpEM](https://discord.gg/mBj7fqKpEM)
+
 
 🎨 Introducing Our Innovative Graphic Design Tool
 
@@ -18,6 +17,12 @@ We're thrilled to present our latest creation – a cutting-edge graphic design 
 ✨ Easy Upgrades, Seamless Experience
 
 Built with ReactJS, our tool offers a seamless experience and allows for easy upgrades, ensuring that you always have access to the latest features and enhancements. With our user-friendly interface and intuitive design, you'll feel right at home from the moment you start using it.
+
+# Community
+[https://discord.gg/mBj7fqKpEM](https://discord.gg/mBj7fqKpEM)
+
+# Pricing
+Our website: [[https://lidojs.com](https://lidojs.com/pricing)](https://lidojs.com/pricing)
 
 ## Features
 
