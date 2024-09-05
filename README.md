@@ -9,6 +9,8 @@ The tool is developed from scratch with ReactJS, so it's easy to upgrade by your
 This code will show you how to integrate LidoJS into an application to make it works like Canva application.
 
 
+Latest features
+- We added Drag and drop layers from sidebar into the design
 
 🎨 Introducing Our Innovative Graphic Design Tool
 
