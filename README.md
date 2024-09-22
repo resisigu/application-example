@@ -20,6 +20,9 @@ We're thrilled to present our latest creation – a cutting-edge graphic design 
 
 Built with ReactJS, our tool offers a seamless experience and allows for easy upgrades, ensuring that you always have access to the latest features and enhancements. With our user-friendly interface and intuitive design, you'll feel right at home from the moment you start using it.
 
+Note:
+- We disabled running application in local environment. To run the application, you need a license from us.
+
 # Community
 [https://discord.gg/mBj7fqKpEM](https://discord.gg/mBj7fqKpEM)
 
