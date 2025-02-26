@@ -1,46 +1,51 @@
 <img width="960" alt="Screenshot 2023-04-22 101234" src="https://github.com/lidojs/canva-clone/assets/19285404/06249d78-3e6c-45a0-b14a-bd73c186fd84" />
 
-**LidoJS** is a design tool with UX same as Canva.
+# LidoJS - Powerful Design Tool for Creatives
 
-Lidojs (Canva-clone) is a web-based graphic design tool. This project is developed with React JS and TypeScript from scratch.
-
+LidoJS is a simple and user-friendly graphic design tool, similar to Canva, that helps you create great designs quickly. Whether you need presentations, marketing materials, or social media graphics, LidoJS has what you need to bring your ideas to life.
 The tool is developed from scratch with ReactJS, so it's easy to upgrade by yourself.
+This code will show you how to integrate LidoJS into an application to make it work like Canva.
 
-This code will show you how to integrate LidoJS into an application to make it works like Canva application.
+Explore the platform at [https://lidojs.com](https://lidojs.com) or meet us at [https://discord.gg/mBj7fqKpEM](https://discord.gg/mBj7fqKpEM).
+
+## **Overview**
+
+LidoJS makes designing simple and fun, offering a variety of tools to help designers, marketers, and content creators reach their goals. From creating slides to making graphics, LidoJS makes the whole process easier.
+
+## **Demo**
+
+[https://demo.lidojs.com](https://demo.lidojs.com).
 
 
-Latest features
-- We added Drag and drop layers from sidebar into the design
+## **Key Features**
+- **Drag-and-Drop Interface:** Simplify the design process with an intuitive editor.
+- **Customizable Templates:** Access a vast collection of pre-designed templates for presentations, posters, and social media.
+- **Advanced Editing Tools:** Fine-tune your designs with precise editing options, including layering, masking, painting, shapes, frames, and color adjustments.
+- **Export Options:** Download designs in various formats suitable for both print (PDF, PNG, JPG) and digital platforms (SVG, WebP).
+Technical Highlights
 
-🎨 Introducing Our Innovative Graphic Design Tool
+## **Technical Highlights**
+- **Proven Technology:** LidoJS uses the same advanced technical solutions as Canva, ensuring a reliable and high-performance design experience.
+- **Built from Scratch:** Core features are developed entirely with React.js, without relying on third-party frameworks.
+- **Unlimited Customization:** Enjoy total creative freedom with the ability to customize any element to fit your specific needs.
 
-We're thrilled to present our latest creation – a cutting-edge graphic design tool developed entirely from scratch using ReactJS and TypeScript. Our tool is designed to empower you with the ability to create stunning visuals effortlessly, just like Canva.
+## **Usage Purpose**
+LidoJS works for many design tasks, such as:
 
-✨ Easy Upgrades, Seamless Experience
+- **Presentations:** Craft professional slide decks with ease using customizable templates.
+- **Marketing Campaigns:** Create eye-catching promotional materials for ads and social media.
+- **Branding:** Develop cohesive brand assets such as logos and banners.
+- **Content Creation:** Design visually compelling graphics for blogs, websites, and newsletters.
 
-Built with ReactJS, our tool offers a seamless experience and allows for easy upgrades, ensuring that you always have access to the latest features and enhancements. With our user-friendly interface and intuitive design, you'll feel right at home from the moment you start using it.
+## **Trusted by Leading Brands**
+LidoJS is a preferred design tool for top brands and organizations, including:
 
-Note:
-- We disabled running application in local environment. To run the application, you need a license from us.
+- **Sendsteps:** Engaging presentation solutions.
+- **Menuzen:** Dynamic digital menu creation.
+- **Designstripe:** Simplified design experiences.
+- **Momentumstack:** Innovative technology and business services.
 
-# Community
-[https://discord.gg/mBj7fqKpEM](https://discord.gg/mBj7fqKpEM)
+Start designing with LidoJS and experience the future of creative possibilities. Visit [https://lidojs.com](https://lidojs.com) to learn more and get started today.
 
-# Pricing
-Our website: [https://lidojs.com/pricing](https://lidojs.com/pricing)
-
-## Features
-
-- **Intuitive Design Interface**: User-friendly tools for creating custom designs.
-- **Rich Text Editing**: Advanced text manipulation features.
-- **Image Upload and Editing**: Capabilities to upload and edit images within the app.
-- **Template Support**: Pre-designed templates for quick and easy design creation.
-- **More Features**: Add any other significant features of your project here.
-
-# Demo
-https://demo.lidojs.com
-
-# Website
-https://lidojs.com
 
 
