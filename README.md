@@ -2,9 +2,9 @@
 
 # LidoJS - Powerful Design Tool for Creatives
 
-LidoJS is a simple and user-friendly graphic design tool, similar to Canva, that helps you create great designs quickly. Whether you need presentations, marketing materials, or social media graphics, LidoJS has what you need to bring your ideas to life.
+LidoJS is a simple and user-friendly graphic design tool, that helps you create great designs quickly. Whether you need presentations, marketing materials, or social media graphics, LidoJS has what you need to bring your ideas to life.
 The tool is developed from scratch with ReactJS, so it's easy to upgrade by yourself.
-This code will show you how to integrate LidoJS into an application to make it work like Canva.
+This code will show you how to integrate LidoJS into an application to make an online design editor application.
 
 Explore the platform at [https://lidojs.com](https://lidojs.com) or meet us at [https://discord.gg/mBj7fqKpEM](https://discord.gg/mBj7fqKpEM).
 
@@ -47,5 +47,11 @@ LidoJS is a preferred design tool for top brands and organizations, including:
 
 Start designing with LidoJS and experience the future of creative possibilities. Visit [https://lidojs.com](https://lidojs.com) to learn more and get started today.
 
+
+## Disclaimer
+
+This source code is developed entirely by our team from scratch. We have not used any third-party resources that require licensing. 
+Our product is designed to assist users in developing design applications efficiently. However, we do not guarantee any specific outcomes or take responsibility for how this software is used.  
+Use this code at your own risk. We are not liable for any damages or issues arising from its use.
 
 
