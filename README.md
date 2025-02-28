@@ -17,6 +17,7 @@ LidoJS makes designing simple and fun, offering a variety of tools to help desig
 [https://demo.lidojs.com](https://demo.lidojs.com).
 
 After creating designs, you can download them in various formats, including PDF, PNG, and JPG. Download feature does not include in the packages, but you can see the output file below
+
 [Open PDF file](https://s3.us-east-2.amazonaws.com/lidojs.com/output-from-templates.pdf)
 
 ## **Key Features**
