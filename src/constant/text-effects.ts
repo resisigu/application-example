@@ -4,7 +4,43 @@ export const addAHeading = {
     'f2d33316-8857-4496-a0c7-3dcc9c4ff981': {
       type: { resolvedName: 'TextLayer' },
       props: {
-        text: '<p style="text-align: center;font-family: Roboto;font-size: 68px;color: rgb(0, 0, 0);line-height: 1.4;letter-spacing: 0em;"><strong><span style="color: rgb(0, 0, 0);">Add a heading</span></strong></p>',
+        doc: {
+          type: 'doc',
+          content: [
+            {
+              type: 'paragraph',
+              attrs: {
+                textAlign: 'center',
+                color: 'rgb(0, 0, 0)',
+                fontFamily: 'Roboto',
+                fontSize: '68px',
+                lineHeight: '1.4',
+                letterSpacing: 0,
+                textTransform: '',
+                marginLeft: null,
+                indent: 0,
+                listType: '',
+              },
+              content: [
+                {
+                  type: 'text',
+                  marks: [
+                    {
+                      type: 'bold',
+                    },
+                    {
+                      type: 'color',
+                      attrs: {
+                        color: 'rgb(0, 0, 0)',
+                      },
+                    },
+                  ],
+                  text: 'Add a heading',
+                },
+              ],
+            },
+          ],
+        },
         position: { x: 525.12102340009, y: 261.582179409994 },
         boxSize: {
           width: 536.3009995574356,
@@ -71,7 +107,43 @@ export const addASubheading = {
     '9cc89a8c-49d5-4f90-9964-f65bbe90db92': {
       type: { resolvedName: 'TextLayer' },
       props: {
-        text: '<p style="text-align: center;font-family: Roboto;font-size: 38px;color: rgb(0, 0, 0);line-height: 1.4;letter-spacing: 0em;"><strong><span style="color: rgb(0, 0, 0);">Add a subheading</span></strong></p>',
+        doc: {
+          type: 'doc',
+          content: [
+            {
+              type: 'paragraph',
+              attrs: {
+                textAlign: 'center',
+                color: 'rgb(0, 0, 0)',
+                fontFamily: 'Roboto',
+                fontSize: '38px',
+                lineHeight: '1.4',
+                letterSpacing: 0,
+                textTransform: '',
+                marginLeft: null,
+                indent: 0,
+                listType: '',
+              },
+              content: [
+                {
+                  type: 'text',
+                  marks: [
+                    {
+                      type: 'bold',
+                    },
+                    {
+                      type: 'color',
+                      attrs: {
+                        color: 'rgb(0, 0, 0)',
+                      },
+                    },
+                  ],
+                  text: 'Add a subheading',
+                },
+              ],
+            },
+          ],
+        },
         position: { x: 519.12102340009, y: 365.582179409994 },
         boxSize: {
           width: 536.3009995574356,
@@ -138,7 +210,40 @@ export const addABodyText = {
     '3cace409-216f-4e0e-9449-9248901c8c94': {
       type: { resolvedName: 'TextLayer' },
       props: {
-        text: '<p style="text-align: center;font-family: Roboto;font-size: 26px;color: rgb(0, 0, 0);line-height: 1.4;letter-spacing: 0em;"><span style="color: rgb(0, 0, 0);">Add a little bit of body text</span></p>',
+        doc: {
+          type: 'doc',
+          content: [
+            {
+              type: 'paragraph',
+              attrs: {
+                textAlign: 'center',
+                color: 'rgb(0, 0, 0)',
+                fontFamily: 'Roboto',
+                fontSize: '26px',
+                lineHeight: '1.4',
+                letterSpacing: 0,
+                textTransform: '',
+                marginLeft: null,
+                indent: 0,
+                listType: '',
+              },
+              content: [
+                {
+                  type: 'text',
+                  marks: [
+                    {
+                      type: 'color',
+                      attrs: {
+                        color: 'rgb(0, 0, 0)',
+                      },
+                    },
+                  ],
+                  text: 'Add a little bit of body text',
+                },
+              ],
+            },
+          ],
+        },
         position: { x: 508.99988653474736, y: 434.903672486454 },
         boxSize: {
           width: 536.3009995574356,

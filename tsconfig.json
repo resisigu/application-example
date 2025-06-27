@@ -1,22 +1,42 @@
 {
-  "compileOnSave": false,
   "compilerOptions": {
-    "rootDir": ".",
-    "sourceMap": true,
-    "declaration": false,
-    "moduleResolution": "node",
-    "emitDecoratorMetadata": true,
-    "experimentalDecorators": true,
-    "esModuleInterop": true,
-    "importHelpers": true,
-    "target": "es2015",
-    "module": "esnext",
-    "lib": ["dom", "dom.iterable", "esnext"],
-    "jsx": "react-jsx",
+    "jsx": "preserve",
+    "allowJs": false,
+    "strict": true,
     "jsxImportSource": "@emotion/react",
-    "skipLibCheck": true,
-    "skipDefaultLibCheck": true,
-    "baseUrl": "."
+    "types": ["vite/client"]
   },
-  "exclude": ["node_modules", "tmp"]
+  "files": [],
+  "include": [],
+  "exclude": ["dist", "node_modules"],
+  "references": [
+    {
+      "path": "../../libs/draw"
+    },
+    {
+      "path": "../../libs/design-editor"
+    },
+    {
+      "path": "../../libs/design-utils"
+    },
+    {
+      "path": "../../libs/text-editor"
+    },
+    {
+      "path": "../../libs/design-screen"
+    },
+    {
+      "path": "../../libs/design-layers"
+    },
+    {
+      "path": "../../libs/design-core"
+    },
+    {
+      "path": "../../libs/color-picker"
+    },
+    {
+      "path": "./tsconfig.app.json"
+    }
+  ],
+  "extends": "../../tsconfig.base.json"
 }
